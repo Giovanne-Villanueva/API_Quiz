@@ -1,0 +1,29 @@
+*{
+    font-family: sans-serif, serif, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 110%;
+    background-color: #D0CDC8
+    ;
+}
+
+header button{
+    border: none;
+    background-color: #D0CDC8;
+    color: aquamarine;
+    text-decoration: underline;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz button{
+    background-color: #4E4B46;
+    color: white;
+}
