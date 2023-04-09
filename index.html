@@ -8,15 +8,23 @@
     <title>Web API Quiz</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <button>View High Score</button>
+        <h1></h1>
     </header>
     <body>
         <div class="quiz">
-            <h1>Coding Quiz on Web API</h1>
-            <p>Welcome user to our Web API quiz. In this quiz we will be testing your skills on some javascript fundumentals for web API. This will be a multiple choice test with four options. You will be timed while you're taking your test. After answering a question you will move on to the next question and at the bottom you will be notified if you got the previous question wrong or not. At the very end your score will be added to a leader board and you will get to see your standing compared to others.</p>
-            <button>Start Quiz</button>
+            <div class="container">
+                <h1>Coding Quiz on Web API</h1>
+                <p>Welcome user to our Web API quiz. In this quiz we will be testing your skills on some javascript fundumentals for web API. This will be a multiple choice test with four options. You will be timed while you're taking your test. After answering a question you will move on to the next question and at the bottom you will be notified if you got the previous question wrong or not. At the very end your score will be added to a leader board and you will get to see your standing compared to others.</p>
+                <button>Start Quiz</button>
+            </div>
+            <div class="question"></div>
+            <form id="scoreForm" method="post">
+            </form>
+            <div class="endPage"></div>
         </div>
     </body>
+    <script src="assets/javascript/quiz.js"></script>
 </body>
 </html>
