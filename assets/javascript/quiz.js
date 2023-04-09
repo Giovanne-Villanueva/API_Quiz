@@ -10,7 +10,6 @@ var userInput, userInput1, userInput2, userInput3, initalInput;
 var start=0
 var input=0
 var leaderBoard= []
-var questions = []
 var correct = true
 var endtime=0
 
@@ -197,6 +196,10 @@ function reset(){
     var button= document.createElement("button")
     button.textContent= "Start Game"
     start=0
+    endtime=0
+    player.score=0
+    player.name=""
+    player.time=0
     container.appendChild(header)
     container.appendChild(paragraph)
     container.appendChild(button)
@@ -302,6 +305,7 @@ endEl.addEventListener("click", function(event){
         var path= element.getAttribute("path")
         if(path === "leader"){
             //Call function to take us to leader board page
+            window.location.href="LeaderBoard/leaderBoard.html"
         }
         else{
             reset()
