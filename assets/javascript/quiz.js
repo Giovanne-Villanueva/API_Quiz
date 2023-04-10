@@ -232,7 +232,7 @@ function quiz(event){
 function timer(time){    
     var timeInterval = setInterval(function(){
         time--
-        headerEl.children[1].textContent= time+" sec"
+        headerEl.children[1].textContent= "Time: "+time+"sec"
         if(time>0){
             //Something
             if( (input === 1) && (!correct)){
@@ -270,7 +270,6 @@ questionEl.addEventListener("click", function(event){
     if(element.matches("button") === true){
         if(start < 4){
             var response=element.getAttribute("option")
-            console.log("I got here" + response)
             if (Number(response) === question.Answer[start]){
                 correct=true
                 player.score++
@@ -312,8 +311,13 @@ endEl.addEventListener("click", function(event){
         }
     }
 });
+headerEl.addEventListener("click", function(event){
+    var element=event.target
 
-//quizEl.addEventListener("click", quiz)
+    if(element.matches("button")){
+        window.location.href="LeaderBoard/leaderBoard.html"
+    }
+})
 
 
 
