@@ -36,11 +36,11 @@ The leader board html page we go to is displaying all the players that have done
 
 Here is a link to my webpage: https://giovanne-villanueva.github.io/API_Quiz/
 
-#License
+# License
 
 Please refer to repo for license
 
-#Credits
+# Credits
 
 Thank you mdn web doc for help on:
 Array pushing items: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
