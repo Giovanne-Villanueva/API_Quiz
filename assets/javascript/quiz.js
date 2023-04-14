@@ -12,6 +12,7 @@ var input=0
 var leaderBoard= []
 var correct = true
 var endtime=0
+var check = true
 
 var players = {
     length:0,
@@ -20,6 +21,7 @@ var players = {
         [].push.call(this, element);
     },
 }
+
 var player = {
     score:0, 
     name:"", 
@@ -35,47 +37,48 @@ var question = {
     Answer: []
 };
 
-question.challenge[0]= "My favorite color is:"
-question.option1[0] = "Blue"
-question.option2[0] = "Red"
-question.option3[0] = "Green"
-question.option4[0] = "Purple"
+question.challenge[0]= "Commonly used data types DO NOT include:"
+question.option1[0] = "strings"
+question.option2[0] = "booleans"
+question.option3[0] = "alerts"
+question.option4[0] = "numbers"
 question.Answer[0] = 3
 
-//questions.push(question)
+question.challenge[1]= "The condition in an if / else statement is enclosed within ____."
+question.option1[1] = "quotes"
+question.option2[1] = "curly brackets"
+question.option3[1] = "parentheses"
+question.option4[1] = "square brackets"
+question.Answer[1] = 3
 
-question.challenge[1]= "My favorite Movie is:"
-question.option1[1] = "Avatar"
-question.option2[1] = "Ted"
-question.option3[1] = "Bullet Train"
-question.option4[1] = "Scott Piligram: Saves the World"
-question.Answer[1] = 1
+question.challenge[2]= "Arrays in JavaScript can be used to store ____."
+question.option1[2] = "numbers and strings"
+question.option2[2] = "other arrays"
+question.option3[2] = "booleans"
+question.option4[2] = "all of the above"
+question.Answer[2] = 4
 
-//questions.push(question)
+question.challenge[3] = "String values must be enclosed within ____ when being assigned to variables."
+question.option1[3] = "commas"
+question.option2[3] = "curly brackets"
+question.option3[3] = "quotes"
+question.option4[3] = "parentheses"
+question.Answer[3] = 3
 
-question.challenge[2]= "My favorite symbol to draw is:"
-question.option1[2] = "Heart"
-question.option2[2] = "Shapes"
-question.option3[2] = "Egg"
-question.option4[2] = "Lighting Bolt"
-question.Answer[2] = 1
-
-//questions.push(question)
-
-question.challenge[3] = "My favorite video game is:"
-question.option1[3] = "Last Spell"
-question.option2[3] = "Jak and Dexter 3"
-question.option3[3] = "Halo 3"
-question.option4[3] = "Final Fantasey X"
-question.Answer[3] = 4
-
-//questions.push(question)
+question.challenge[4] = "A very useful tool used during development and debugging for printing content to the debugger is:"
+question.option1[4] = "JavaScript"
+question.option2[4] = "terminal / bash"
+question.option3[4] = "for loops"
+question.option4[4] = "console.log"
+question.Answer[4] = 4
 
 start=0
-console.log(question)
+
+//Here we will be setting up our html to display one of our questions
 function startup(){
-    //Change the header element to our first question
+    //Clear the html in question Element
     //add four different options that users can click on
+    //if this is not the first itteration then display correct or wong based on userinput
     questionEl.innerHTML=""
     problem()
     possibleAns()
@@ -88,7 +91,13 @@ function startup(){
 
 }
 
+//this function add the Correct or Wong prompt on the html page we have
 function ansDisplay(){
+    // We create a new html element
+    //We must check if the users input from the previous question was correct
+        //if so display correct
+        //else display wrong
+    //Append new html element to the webpage
     var ans= document.createElement("p");
     if(correct){
         ans.textContent="--------Correct-------";
@@ -99,12 +108,15 @@ function ansDisplay(){
     questionEl.appendChild(ans);
 }
 
+//Here we make a new html element (headding 2) and append it to the html
 function problem(){
     var problem=document.createElement("h2")
     problem.textContent=question.challenge[start]
     questionEl.appendChild(problem)
 }
 
+//Here we make a new html element (button) and append it to the html
+//We also give the button a unique attribute to use for later
 function possibleAns(){
     userInput=document.createElement("button")
     userInput.textContent=question.option1[start]
@@ -112,6 +124,8 @@ function possibleAns(){
     questionEl.appendChild(userInput)
 }
 
+//Here we make a new html element (button) and append it to the html
+//We also give the button a unique attribute to use for later
 function possibleAns1(){
     userInput1=document.createElement("button")
     userInput1.textContent=question.option2[start]
@@ -119,6 +133,8 @@ function possibleAns1(){
     questionEl.appendChild(userInput1)
 }
 
+//Here we make a new html element (button) and append it to the html
+//We also give the button a unique attribute to use for later
 function possibleAns2(){
     userInput2=document.createElement("button")
     userInput2.textContent=question.option3[start]
@@ -126,6 +142,8 @@ function possibleAns2(){
     questionEl.appendChild(userInput2)
 }
 
+//Here we make a new html element (button) and append it to the html
+//We also give the button a unique attribute to use for later
 function possibleAns3(){
     userInput3=document.createElement("button")
     userInput3.textContent=question.option4[start]
@@ -134,33 +152,53 @@ function possibleAns3(){
 }
 
 
-
+//This function will set up our html to ask for user initals to save score and record their completion time for the quiz they took
 function scoreCollection(){
-    player.time= endtime
-    questionEl.innerHTML=""
+    //We must check to see if this function has been called 
+        //if not then we change the status of not being called to false
+        //Then we create elements for our html web page
+        //We make a heading 2, label, input, and a button
+        //finally we append the new Elements to the html 
+    if(check){
+        check = false
+        player.time= endtime
+        questionEl.innerHTML=""
 
-    
-    
-    var label= document.createElement("label")
-    label.textContent="Please enter your intials here: "
-    label.setAttribute("for", "initals")
+        
+        var header= document.createElement("h2")
+        header.textContent="Congratulations"
+        
 
-    initalInput = document.createElement("input")
-    initalInput.setAttribute("type", "text")
-    initalInput.setAttribute("id", "initals")
-    initalInput.setAttribute("name", "initals")
+        var label= document.createElement("label")
+        label.textContent="Please enter your intials here: "
+        label.setAttribute("for", "initals")
 
-    var submit= document.createElement("input")
-    submit.setAttribute("type", "submit")
-    submit.setAttribute("value", "Submit")
+        initalInput = document.createElement("input")
+        initalInput.setAttribute("type", "text")
+        initalInput.setAttribute("id", "initals")
+        initalInput.setAttribute("name", "initals")
 
-    scoreEl.appendChild(label)
-    scoreEl.appendChild(initalInput)
-    scoreEl.appendChild(submit)
+        var submit= document.createElement("input")
+        submit.setAttribute("type", "submit")
+        submit.setAttribute("value", "Submit")
+
+        scoreEl.appendChild(header)
+        scoreEl.appendChild(label)
+        scoreEl.appendChild(initalInput)
+        scoreEl.appendChild(submit)
+    }
 
 }
 
+//This function changes the html on the webpage to display an ending screen with two buttons
 function endingScreen(){
+    //We must change the status of check to true, so users can retake the test
+    //We clear the html on the page
+    //We store the current player to our local Storage
+    //We make new html Elements h1, p, button
+    //We give the buttons a special attribute
+    //We append new html elements to html page
+    check=true
     scoreEl.innerHTML=""
     console.log(players)
     players.addElem(player);
@@ -179,7 +217,7 @@ function endingScreen(){
     leader.textContent= "HighScore Board"
     leader.setAttribute("path", "leader")
 
-    console.log(player)
+    //console.log(player)
     endEl.appendChild(header)
     endEl.appendChild(paragraph)
     endEl.appendChild(home)
@@ -187,7 +225,13 @@ function endingScreen(){
 
 }
 
+//We set up the inital home screen and reset values for a new test
 function reset(){
+    //We clear any previous html elements
+    //We make new html elements h1, p, button
+    //We add text content
+    //We reset certain variables (play info, starting index for questions, endingtime for players)for a new test run
+    //We append new html elements to html page 
     endEl.innerHTML=""
     var header= document.createElement("h1")
     header.textContent= "Coding Quiz on Web API"
@@ -205,31 +249,61 @@ function reset(){
     container.appendChild(button)
 }
 
+//Here we are starting the quiz by clearing previous html, starting a timer, collecting previous users, and setup our first set question
 function quiz(event){
-        var time
-        time = 75
-        container.innerHTML=""
-        if(localStorage.getItem("Players")!=null){
-            var temp=JSON.parse(localStorage.getItem("Players"))
-            console.log(temp)
-            for(var entry of Array.prototype.values.call(temp)){
-                console.log(entry)
-                players.addElem(entry)
-            }
-        }
 
-        timer(time)
-        startup()
-        
-    //check answer
-        //change user score and decrease timer
-    //check to see if this is first question
-        //do nothing ask next question
-    //else 
-        //display Wrong or Correct based on previous response on question
+    //We make a variable for our timmer
+    //we set are allotted time for the quiz
+    //We clear the previous html content
+    //We check to see if there is anything in local storage
+        //if there is something we must make sure our players object is empty
+        //Then we must get this item from local storage
+        //we must add these items to current players array
+    //We setup our timer for the quiz
+    //We call a function to set the first question of our Quiz
+    var time
+    time = 75
+    container.innerHTML=""
+    if(localStorage.getItem("Players")!=null){
+        players={
+            length:0,
+
+            addElem(element){
+                [].push.call(this, element);
+            },
+        };
+        var temp=JSON.parse(localStorage.getItem("Players"))
+        console.log(temp)
+        for(var entry of Array.prototype.values.call(temp)){
+            players.addElem(entry)
+        }
+    }
+
+    timer(time)
+    startup()
 }
 
+//This is a timer that checks certain variables to decrease time futher and eventually call a score collection function
 function timer(time){    
+    //Here we make our time interval
+        //the interval has a function that has a decreasing time variable
+        //We edit the html text content of one varaiable to display the time left
+        //if there is time left we must check 2 things
+            //If user input is correctly answering questions
+                //if so reset variable used to check for input back to waiting
+                //decrease time further
+                //reset the variable used to determine correct or wrong response
+            //if users are on the last qustion
+                //Then I save their ending time
+                //Stop the timer
+                //reset the html element to have no timer on the screen
+                //go to function that collects users initials
+        //if time is less than or equal to zero
+            //set the users ending time to zero
+            //stop the timer
+            //reset the html to have no timer on the screen
+            //go to function that collects users initials
+
     var timeInterval = setInterval(function(){
         time--
         headerEl.children[1].textContent= "Time: "+time+"sec"
@@ -240,8 +314,15 @@ function timer(time){
                 time= time-15
                 correct=true
             }
-            if(start >= 4){
-                endtime= time
+            if(start >= question.Answer.length){
+                //console.log("The timer is at: "+time)
+                if(time<0){
+                    endtime= 0
+                }
+                else{
+                    endtime=time
+                }
+                //console.log("We ended on: " +endtime)
                 clearInterval(timeInterval)
                 headerEl.children[1].textContent=""
                 scoreCollection()
@@ -260,15 +341,17 @@ function timer(time){
 
 
 
-
+//We wait for the user to click anywhere on the page to start on the quiz
 container.addEventListener("click", quiz)
+//We wait for users to click on the questions section and we make sure users click on a button
+//if so we set values to display this and set up our next set or questions or just end the quiz if no more question
 questionEl.addEventListener("click", function(event){
     
     var element = event.target;
     
-    console.log("I got here" + start )
+    //console.log("I got here" + start )
     if(element.matches("button") === true){
-        if(start < 4){
+        if(start < question.challenge.length){
             var response=element.getAttribute("option")
             if (Number(response) === question.Answer[start]){
                 correct=true
@@ -279,13 +362,17 @@ questionEl.addEventListener("click", function(event){
             }
             start++
             input=1
-            startup()
+            if(start < question.challenge.length){
+                startup()
+            }
         }
         else{
             scoreCollection()
         }
     }
 });
+//Here we wait for a user to submit something in our form if there is nothing we alert users
+//at the very end we save this data for our current play information and call a function to move to the ending screen
 scoreEl.addEventListener("submit", function(event){
     event.preventDefault();
     var initals = initalInput.value
@@ -297,13 +384,14 @@ scoreEl.addEventListener("submit", function(event){
         endingScreen()
     }
 });
+//Here we just wait for users to click two buttons to either restart the quiz or take users to other html page
 endEl.addEventListener("click", function(event){
     var element=event.target;
     
     if(element.matches("button")){
         var path= element.getAttribute("path")
         if(path === "leader"){
-            //Call function to take us to leader board page
+            //Call to take us to leader board page
             window.location.href="LeaderBoard/leaderBoard.html"
         }
         else{
@@ -311,6 +399,7 @@ endEl.addEventListener("click", function(event){
         }
     }
 });
+//The buttton on the very top if clicked will take users instanly to our leaderBoard webpage
 headerEl.addEventListener("click", function(event){
     var element=event.target
 
@@ -318,15 +407,3 @@ headerEl.addEventListener("click", function(event){
         window.location.href="LeaderBoard/leaderBoard.html"
     }
 })
-
-
-
-function maxNum(array){
-    var max=0
-    for(var i= 0; i < array.length; i++){
-        if( array[i] > max){
-            max = array[i]
-        }
-    }
-    return max
-}
