@@ -24,7 +24,7 @@ The next image above is diplaying what happens after you start the quiz. The con
 
 ![Submit Form](./assets/images/Submit.PNG)
 
-    The quiz will end when either the timer runs out or the player answers all the questions. Once the quiz is over it will instantly transition into the next screen seen above. This is the score collecting screen where we get users initials. Now here you will be given a text box entry. Users can put anything here if they do not want to put their initials. The only thing the project will not allow is an empty the text box entry.If the text box entry is left empty it will give out an alert stating "Please do not leave empty". You can put empty spaces in the text box and it will proceed like that if you wish. I could have made a more extensive error catching system here to look for just initials, but as it stands now you can enter anything here as long as its not empty.
+The quiz will end when either the timer runs out or the player answers all the questions. Once the quiz is over it will instantly transition into the next screen seen above. This is the score collecting screen where we get users initials. Now here you will be given a text box entry. Users can put anything here if they do not want to put their initials. The only thing the project will not allow is an empty the text box entry.If the text box entry is left empty it will give out an alert stating "Please do not leave empty". You can put empty spaces in the text box and it will proceed like that if you wish. I could have made a more extensive error catching system here to look for just initials, but as it stands now you can enter anything here as long as its not empty.
 
 ![Ending Screen](./assets/images/ending.PNG)
 
