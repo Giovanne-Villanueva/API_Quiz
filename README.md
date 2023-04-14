@@ -32,4 +32,16 @@ After putting your initials you will transition to the final part of this html f
 
 ![Leader Board Page](./assets/images/leaderBoard.PNG) 
 
-The leader board html page we go to is displaying all the players that have done the quiz locally on their device. This specific html file has its own javascript file that sorts the players. Now I will say the sorting is not perfect. Lets assume we a list of users and say the last person on the list got a score of 4 but ran out of time. They will be placed on the bottom no matter what. If there is any user who got a score of one and finished in time they will be placed above the user with a score of 4 but time of 0. Now this would be different if this user was the fist one on our list. The user will be placed as the last user that had a score of four or placed on top if 4 is the highest score and this can only occure if the user is placed first in the list. I could find a better way to sort the list it is not perfect. 
+The leader board html page we go to is displaying all the players that have done the quiz locally on their device. This specific html file has its own javascript file that sorts the players. Now I will say the sorting is not perfect. Lets assume we a list of users and say the last person on the list got a score of 4 but ran out of time. They will be placed on the bottom no matter what. If there is any user who got a score of one and finished in time they will be placed above the user with a score of 4 but time of 0. Now this would be different if this user was the fist one on our list. The user will be placed as the last user that had a score of four or placed on top if 4 is the highest score and this can only occure if the user is placed first in the list. I could find a better way to sort the list it is not perfect.
+
+Here is a link to my webpage: https://giovanne-villanueva.github.io/API_Quiz/
+
+#License
+Please refer to repo for license
+
+#Credits
+Thank you mdn web doc for help on:
+Array pushing items: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+Array values: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values
+Redirecting html: https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
+
