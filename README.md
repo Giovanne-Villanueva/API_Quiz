@@ -45,6 +45,8 @@ Please refer to repo for license
 Thank you mdn web doc for help on:
 
 Array pushing items: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+
 Array values: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values
+
 Redirecting html: https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 
