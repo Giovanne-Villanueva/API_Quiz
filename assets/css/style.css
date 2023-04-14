@@ -5,7 +5,19 @@
     color: #2F5233;
 }
 
-
+button{
+    background-color: 
+    #2F5233;
+    color: #B1D8B7;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 0.5%;
+    font-size: 150%;
+    width: 50%;
+    height: 10%;
+    border-color: #76B947;
+    border-width: medium;
+}
 
 header{
     display: flex;
@@ -17,6 +29,8 @@ header{
     background-color: #B1D8B7;
     color: #2F5233;
     text-decoration: underline;
+    font-size: 110%;
+    width: auto;
 }
 
 
@@ -30,35 +44,21 @@ header{
     align-items: center;
 }
 
-.container button{
-    background-color: 
-    #76B947;
-    color: #2F5233;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 0.5%;
-    font-size: 150%;
-    width: 50%;
-    height: 10%;
-    border-color: #94C973;
-    border-width: medium;
+.container h1{
+    font-size: 160%;
+}
+
+.container p{
+    text-align: center;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 .question button{
-    background-color:#76B947;
-    color: #2F5233;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 0.5%;
-    font-size: 150%;
     width: 25%;
-    height: 10%;
     border-color: #94C973;
-    border-width: medium;
+    border-width: 5px;
 }
-
-
-
 
 .question{
     display: flex;
@@ -68,9 +68,5 @@ header{
 }
 
 .question h2{
-    font-size: 150%;
+    font-size: 160%;
 }
-
-/*.question button{
-    background-color: ;
-}*/
